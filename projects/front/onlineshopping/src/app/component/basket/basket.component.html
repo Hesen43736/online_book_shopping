@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Şəkil</th>
+                        <th>Ad</th>
+                        <th>Qiymət</th>
+                        <th>Miqdar</th>
+                        <th>Cəmi</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let bp of basketProducts;let counter=index;">
+                        <td><img [src]="download+bp.product.image" style="width: 40px;" /> </td>
+                    <td>  {{bp.product.name}} </td>
+                    <td>  {{bp.product.price}} AZN </td>
+                    <td>  <input type="number" [(ngModel)]="bp.count" (input)="onCountChanged()" />  </td>
+                    <td>  {{bp.product.price*bp.count}} AZN </td>
+                    <td>  <button (click)="onRemoveProduct(counter)" class="btn btn-danger">X</button>  </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+          Ümumi qiymət:  {{getAllProductPrice()}} AZN
+        </div>
+
+        <div class="col-sm-6">
+                <button mat-dialog-close (click)="onConfirmOrder()" *ngIf="basketProducts.length>0" class="btn btn-success">
+                    Sifarişi təsdiqlə
+                </button>
+            </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2">
+            <img src="../../../assets/logo.png" style="width: 100%;" />
+        </div>
+        <div class="col-sm-8">
+            <input class="form-control" type="text" placeholder="Axtarış" />
+        </div>
+        <div class="col-sm-2">
+            <div id="basket" (click)="onOpenBasket()">
+                <span *ngIf="showBasket">Səbət: {{productCount}}-Məhsul</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+<app-product-template 
+ *ngFor="let p of productService.products" [product]="p">
+ 
+</app-product-template>
+
+
+        </div>
+    </div>
+</div>

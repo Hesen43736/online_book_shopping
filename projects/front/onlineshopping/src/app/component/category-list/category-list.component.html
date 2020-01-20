@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="list-group">
+                <a *ngFor="let c of categories;let counter=index;"
+                (click)="categorySelected(c.id,counter)" class="list-group-item list-group-item-action">
+                {{c.name}}</a>
+              </div>  
+        </div> 
+        <div class="col-sm-6"> 
+<form #categoryForm="ngForm" (ngSubmit)="!categoryForm.invalid && saveCategory()" >
+     <input type="text" [(ngModel)]="category.name" name="categoryName" required /> <br>
+     <button type="submit" > {{saveButtonText}} </button>
+</form>
+<button (click)="deleteCategory()"  > Delete </button>
+<hr>
+<p *ngIf="categoryForm.invalid">{{errorMessage}}</p>
+        </div>
+    </div>
+</div>

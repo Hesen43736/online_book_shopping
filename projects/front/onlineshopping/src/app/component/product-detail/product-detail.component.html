@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <img *ngIf="product.image" [src]="downloadPath+product.image" [alt]="product.name"
+            style="width: 200px;"
+            />
+<p>Ad : {{product.name}}</p>
+<p>Qiymət : {{product.price}}</p>
+<p> Təsvir : {{product.description}}</p>
+<p>Baxış sayı : 100</p>
+<p>Şəhər : {{product.cityId}} </p>
+<p>Elan sahibi : {{product.ownerName}} </p>
+<p>Telefon : {{product.phone}} </p>
+        </div>
+    </div>
+</div>

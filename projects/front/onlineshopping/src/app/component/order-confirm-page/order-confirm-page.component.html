@@ -1,0 +1,69 @@
+<div class="container"  >
+    <div class="row">
+        <div class="col-sm-12">
+
+
+            <form #orderForm="ngForm" (ngSubmit)="!orderForm.invalid && onConfirmOrder()" style="padding: 10px;">
+                <div class="form-group">
+                    <label for="customerName">Ad:</label>
+                    <input type="text" class="form-control" [(ngModel)]="order.customer.name" id="customerName"
+                        placeholder="Adınızı daxil edin" name="customerName" required #customerName="ngModel" />
+
+                    <div *ngIf="customerName.invalid" style="color: red;">Adınızı yazın</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerAddress">Ünvan:</label>
+                    <input type="text" class="form-control" [(ngModel)]="order.customer.address" id="customerAddress"
+                        placeholder="Ünvan daxil edin" name="customerAddress" required #customerAddress="ngModel" />
+
+                    <div *ngIf="customerAddress.invalid" style="color: red;">Ünvan yazın</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerPhone">Telefon:</label>
+                    <input pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" type="tel" class="form-control"
+                        [(ngModel)]="order.customer.phone" id="customerPhone"
+                        placeholder="Telefon daxil edin (055-555-5555)" name="customerPhone" required
+                        #customerPhone="ngModel" />
+
+                    <div *ngIf="customerPhone.invalid" style="color: red;">Telefon yazın</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerEmail">Email:</label>
+                    <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text" class="form-control"
+                        [(ngModel)]="order.customer.email" id="customerEmail" placeholder="Email daxil edin"
+                        name="customerEmail" required #customerEmail="ngModel" />
+
+                    <div *ngIf="customerEmail.invalid" style="color: red;">Email yazın</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="note">Qeyd:</label>
+                    <input type="text" class="form-control" [(ngModel)]="order.note" id="note"
+                        placeholder="Qeyd daxil edin" name="note" #note="ngModel" />
+
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <input type="checkbox" [(ngModel)]="confirm" id="customerConfirm" name="customerConfirm" required
+                        #customerConfirm="ngModel" />
+                    Məlumatları təsdiqləyirəm
+
+                    <div *ngIf="customerConfirm.invalid" style="color: red;">Təsdiqləyin</div>
+                </div>
+
+
+
+                <button type="submit" class="btn btn-success">Sifarişi təsdiqlə</button>
+            </form>
+
+
+
+        </div>
+    </div>
+</div>
