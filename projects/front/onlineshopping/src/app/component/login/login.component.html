@@ -1,19 +1,22 @@
-<div class="container">
 
-    <div class="row">
-        <div class="col-sm-12">
 
-            <table>
-                <tbody>
-                    <tr><td>Username : </td> <td> <input type="text" [(ngModel)]="username" /> </td></tr>
-                    <tr><td>Password : </td> <td> <input type="password" [(ngModel)]="password"/> </td></tr>
-                    <tr><td> </td> <td>  <button (click)="onLogin()">Login</button> </td></tr>
-                    <tr><td>  </td> <td>  </td></tr>
-                </tbody>
-            </table>
+    <div  class="container" style="margin: 20px auto 0 auto;width: 500px;">
+       
 
-        </div>
+        <table class="table table-bordered">
+            <tbody>
+                <tr><td style="text-align: center;">İstifadəçi adı : </td> <td> <input class="form-control ng-pristine ng-valid ng-touched" type="text" [(ngModel)]="username" /> </td></tr>
+                <tr><td style="text-align: center;">Şifrə : </td> <td> <input class="form-control ng-pristine ng-valid ng-touched" type="password" [(ngModel)]="password"/> </td></tr>
+                
+                <tr>
+                  
+                    
+                    <td  style="text-align: center;"> <button   class="btn btn-primary">Hesab yarat</button> </td> <td>  <button (click)="onLogin()" class="btn btn-success">Daxil ol</button> </td>
+                </tr>
+                    
+            </tbody>
+        </table>
     </div>
-</div>
+
 <hr>
 {{message}}

@@ -8,24 +8,19 @@
     <table class="table table-bordered">
         
         <tbody>
-            <h3 _ngcontent-csk-c8="" style="color: green; margin-bottom: 5px;text-align: center;">Yeni kitab qeydiyyatı</h3>
-            <tr><td>Kateqoriya : </td><td> 
-            <select [(ngModel)]="product.categoryId" required name="productCategory" >
-                <option *ngFor="let c of categories" [value]="c.id"  >{{c.name}}</option>
-            </select>    
+            <h3 style="color: green; margin-bottom: 5px;text-align: center;">Yeni kitab qeydiyyatı</h3>
+             
             
-            </td></tr>
-            <tr><td>Məhsul adı : </td><td> <input type="text" [(ngModel)]="product.name" name="productName" required minlength="2" maxlength="100" /> </td></tr>
+            
+            <tr><td>Kitab adı: </td><td> <input type="text" [(ngModel)]="product.name" name="productName" required minlength="2" maxlength="100" /> </td></tr>
             <tr><td>Qiyməti : </td><td><input type="number" [(ngModel)]="product.price" name="productPrice" required min="0" max="100000" step="0.01" />    </td></tr>
-            <tr><td>Yeni? : </td><td>  <input type="checkbox" [(ngModel)]="product.isNew" name="isNew" />  </td></tr>
-            <tr><td>Sahib adı : </td><td>   <input type="text" [(ngModel)]="product.ownerName" name="ownerName" required minlength="2" maxlength="100" />   </td></tr>
-            <tr><td>Telefon : </td><td>   <input type="tel" [(ngModel)]="product.phone" name="phone" required  pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"  />  </td></tr>
-             <tr><td>Məzmun : </td><td>  <textarea style="width: 100%;" [(ngModel)]="product.description" name="description" ></textarea>  </td></tr>
-            <tr><td>Şəhər : </td><td>  <select [(ngModel)]="product.cityId" required name="productCity" >
-                <option *ngFor="let c of cities" [value]="c.id"  >{{c.name}}</option>
-            </select>    </td></tr>
+            <tr><td>Səhifə sayı : </td><td><input type="number" [(ngModel)]="product.page" name="productPage" required min="0" max="100000" step="1" />    </td></tr>
+            <tr><td>Müəllif: </td><td>   <input type="text" [(ngModel)]="product.ownerName" name="ownerName" required minlength="2" maxlength="100"  style="height:100% ;" />   </td></tr>
+           
+             <tr><td>Təsvir : </td><td>  <textarea style="width: 100%;" [(ngModel)]="product.description" name="description" ></textarea>  </td></tr>
+          
             <tr><td>Şəkil : </td><td> <input type="file" (change)="imageSelected($event)" name="productImage" required  />  </td></tr>
-            <tr><td>Email : </td><td>  <input type="email" [(ngModel)]="product.email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  />  </td></tr>  
+            
             <tr><td>  </td><td>  <button type="submit" class="btn btn-primary" >Yadda saxla</button>  </td></tr>
         </tbody>
     </table>  

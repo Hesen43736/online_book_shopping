@@ -3,18 +3,27 @@
 
  
  
-  <div class="card" style="float: left;margin: 10px;padding: 5px;">
+  <div class="card" style="float: left;margin: 10px;padding: 5px;  ">
     <img [src]="downloadPath+product.image" class="card-img-top" alt=""
     style="width: 120px;height: 120px;">
     <div class="card-body">
       
-      <div style="width: 100%;height: 30px;
-      background-color: rgb(22, 199, 81);color: white;text-align: center;">
-      {{product.price}} - AZN</div>
-      <h3 class="card-title">{{product.name}}</h3>
+      
+      
+        <p class="book_name" style="color: blue; font-weight:bold;">{{product.name}}</p>
+        <p class="card-text" style="color: blue; font-weight:bold;" >Müəllif:{{product.ownerName}}</p>
     
-      <p class="card-text">{{product.description}}</p>
-      <button class="btn btn-primary" (click)="productSelected()">Ətraflı</button>
+      
+      
+      <div style="width: 100%;height: 30px;
+       color:rgb(32, 148, 61);text-align: center;">
+      Qiymət:{{product.price}} - AZN</div>
+      <p class="card-text" style="color: gray
+      ; font-weight:bold;">Təsvir:{{product.description}}</p>
       <button class="btn btn-primary" (click)="toBasket()">Səbətə</button>
+
+    </div>
+
     </div>
   </div>
+  

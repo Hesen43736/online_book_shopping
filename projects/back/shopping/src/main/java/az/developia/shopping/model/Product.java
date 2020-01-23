@@ -24,11 +24,13 @@ private Integer categoryId ;
 private double price;
 private boolean isNew;
 private String  image;
-private String email;
+
 private Integer cityId;
 private String description;
 private String ownerName;
 private String phone;
 private Date register;
 private Integer userId;
+private  Integer page;
+
 }
