@@ -1,7 +1,5 @@
 package az.developia.shopping.controller;
 
-import java.sql.Date;
-import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import az.developia.shopping.dao.OrderDAO;
-import az.developia.shopping.dao.ProductDAO;
+import az.developia.shopping.dao.OrderDao;
 import az.developia.shopping.model.OrderModel;
-import az.developia.shopping.model.Product;
 
 @RestController
 @CrossOrigin(origins="*")
@@ -24,7 +20,7 @@ import az.developia.shopping.model.Product;
 public class OrderController {
 
 	@Autowired
-	private OrderDAO orderDAO;
+	private OrderDao orderDAO;
 	
 	 @PostMapping
 	 public OrderModel add(@RequestBody OrderModel om){

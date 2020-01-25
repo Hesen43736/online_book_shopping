@@ -1,18 +1,16 @@
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12" style="margin: 10px auto 10px auto; text-align: center; z-index: 0; max-height: 300px; overflow: hidden;">
-            <img  src="../../../assets/iki.jpg" style="width: 100%; border-radius: 20px;" />
+            <img  src="../../../assets/iki.jpg" style="width: 100%; border-radius: 20px;"/>
         </div>
-      
-        
     </div>
 </div>
 
 
+
 <div class="row">
-    <div class="row" style="margin: 10px auto 0 auto;width: 860px;" >
-        <div class="col-sm-12" >
+    <div class="row" style="margin: 10px auto 0 auto;width: 860px;">
+        <div class="col-sm-12">
 
 
 <app-product-template 
@@ -24,4 +22,21 @@
 
         </div>
     </div>
+
 </div>
+
+
+
+
+
+
+
+<div style="position: fixed;bottom: 10px;right: 30px;">
+    <div id="basket" (click)="onOpenBasket()">
+        <span *ngIf="showBasket">Səbət: {{productCount}}-Məhsul</span>
+    </div>
+
+    <input class="form-control" type="text" placeholder="Axtarış" />
+
+</div>
+ 
