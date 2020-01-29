@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderModel } from 'src/app/model/order';
 import { BasketService } from 'src/app/service/basket.service';
 import { OrderService } from 'src/app/service/order.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-confirm-page',
@@ -12,7 +13,7 @@ export class OrderConfirmPageComponent implements OnInit {
   confirm: boolean = true;
   order:OrderModel=new OrderModel(0);
 
-  constructor(private basketService:BasketService,private orderService:OrderService) { }
+  constructor(private basketService:BasketService,private orderService:OrderService,private r:Router) { }
 
   ngOnInit() {
     this.order.basketProducts=this.basketService.basketProducts;
@@ -32,6 +33,7 @@ let totalPrice=0;
     resp=>{
       console.log(resp);
       this.basketService.basketProducts=[];
+      this.r.navigate(['customer-page']);
     }
   );
 
