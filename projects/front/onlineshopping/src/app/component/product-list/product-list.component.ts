@@ -8,6 +8,7 @@ import { DOWNLOAD_URL } from 'src/app/constants';
 import { AgGridAngular } from 'ag-grid-angular';
  
 import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -27,7 +28,7 @@ name:string='';
 saveButtonText:string='Add';
 saveMode:string='add'
 products:Product[]=[];
-  constructor(private matDialog:MatDialog,private productService:ProductService,private userService:UserService) { }
+  constructor(private r:Router,private matDialog:MatDialog,private productService:ProductService,private userService:UserService) { }
 
   ngOnInit() { this.dtOptions = {
     pagingType: 'full_numbers',
@@ -57,7 +58,7 @@ let dialog=this.matDialog.open(AddProductComponent);
 dialog.afterClosed().subscribe(
   resp=>{
     //console.log('mehsul qeydiyyati penceresi baglandi');
-this.loadProducts();
+this.loadProducts2();
 
   }
 );
@@ -69,6 +70,8 @@ this.loadProducts();
       }
     );
   }
-
+  loadProducts2() {
+    this.r.navigate(['fake']);
+  }
 }
 

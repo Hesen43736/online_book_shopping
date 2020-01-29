@@ -25,6 +25,7 @@ import { OrderConfirmPageComponent } from './component/order-confirm-page/order-
 import { DataTablesModule } from 'angular-datatables';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { OrderListComponent } from './component/order-list/order-list.component';
+import { FakeComponent } from './fake/fake.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { OrderListComponent } from './component/order-list/order-list.component'
     ProductDetailComponent,
     BasketComponent,
     OrderConfirmPageComponent,
-    OrderListComponent
+    OrderListComponent,
+    FakeComponent
   ],
   imports: [
     BrowserModule,

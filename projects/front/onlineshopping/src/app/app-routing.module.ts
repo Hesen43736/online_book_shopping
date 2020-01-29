@@ -11,6 +11,7 @@ import { AdminPageComponent } from './component/admin-page/admin-page.component'
 import { CategoryListComponent } from './component/category-list/category-list.component';
 import { OrderConfirmPageComponent } from './component/order-confirm-page/order-confirm-page.component';
 import { OrderListComponent } from './component/order-list/order-list.component';
+import { FakeComponent } from './fake/fake.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,7 @@ const routes: Routes = [
 {path:'admin-page',component:AdminPageComponent,canActivate:[RouteGuardService]},
 {path:'category-list',component:CategoryListComponent},
 {path:'order-confirm',component:OrderConfirmPageComponent},
-{path:'order-list',component:OrderListComponent},
+{path:'order-list',component:OrderListComponent},{path:'fake',component:FakeComponent},
 {path:'**',component:LoginComponent}
 ];
 
