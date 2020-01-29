@@ -15,7 +15,7 @@ productCount:number=0;
 
   ngOnInit() {
     if(this.productService.productsLoaded===false){
-      this.productService.findAll().subscribe(
+      this.productService.findPartial(this.begin,this.length).subscribe(
         resp=>{
           this.productService.products=resp;
           this.productService.productsLoaded=true;
@@ -43,5 +43,17 @@ setTimeout(
 
   onOpenBasket(){
 this.matDialog.open(BasketComponent);
+ 
+}
+begin :number=0;
+length :number=10 
+  onScroll(){
+    this.begin+=10;
+    this.productService.findPartial(this.begin,this.length).subscribe(
+      resp=>{
+        this.productService.products.push(...resp);
+        
+      }
+    );
   }
 }

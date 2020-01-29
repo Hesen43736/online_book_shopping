@@ -1,0 +1,37 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Müştəri</th>
+            <th>Məhsullar</th>
+            <th>Qiymət</th>  <th>Tarix</th>
+             
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let o of orders">
+            <td>{{o.id}}</td>
+            <td>
+                
+               Ad: {{o.customer.name}}<br>
+               Unvan: {{o.customer.address}}<br>
+               Telefon: {{o.customer.phone}} 
+            
+            </td>
+            <td> 
+    
+                <ul>
+                    <li *ngFor="let bp of o.basketProducts">
+    {{bp.count}} - ədəd ({{bp.product.name}}). {{bp.product.price}} AZN
+    
+                    </li>
+                </ul>
+    
+    
+            </td>
+            <td>{{o.totalPrice}}</td>
+            <td>{{o.register}}</td>
+        </tr>
+    </tbody>
+    
+    </table>

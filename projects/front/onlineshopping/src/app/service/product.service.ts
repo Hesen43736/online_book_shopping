@@ -34,5 +34,7 @@ export class ProductService {
     return this.http.get<Product[]>(`${API_URL}/products/user/${userId}`); 
   }
 
-
+  findPartial(begin:number,length:number){
+    return this.http.get<Product[]>(`${API_URL}/products/find-partial/${begin}/${length}`); 
+  }
 }

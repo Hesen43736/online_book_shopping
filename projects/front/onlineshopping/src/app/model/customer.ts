@@ -1,8 +1,8 @@
 export class Customer{
-public name:string="";
-public address:string;
-public phone:string;
-public email:string;
+public name:string="adddd";
+public address:string="adressss";
+public phone:string="055-555-4565";
+public email:string="gdfgd@gdfg.com";
 
 
 

@@ -35,7 +35,7 @@ for (let index = 0; index < this.basketProducts.length; index++) {
   
 }
 return totalPrice;
-  }
+}
 
   onConfirmOrder(){
     this.router.navigate(['order-confirm']);

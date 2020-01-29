@@ -15,6 +15,7 @@ public phone:string;
 public register:Date;
 public userId:number;
 public page:number;
+
     constructor(public  id:number){
         
     }

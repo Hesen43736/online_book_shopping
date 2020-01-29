@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderModel } from 'src/app/model/order';
 import { BasketService } from 'src/app/service/basket.service';
+import { OrderService } from 'src/app/service/order.service';
 
 @Component({
   selector: 'app-order-confirm-page',
@@ -8,10 +9,10 @@ import { BasketService } from 'src/app/service/basket.service';
   styleUrls: ['./order-confirm-page.component.css']
 })
 export class OrderConfirmPageComponent implements OnInit {
-  confirm: boolean = false;
+  confirm: boolean = true;
   order:OrderModel=new OrderModel(0);
 
-  constructor(private basketService:BasketService) { }
+  constructor(private basketService:BasketService,private orderService:OrderService) { }
 
   ngOnInit() {
     this.order.basketProducts=this.basketService.basketProducts;
@@ -26,8 +27,13 @@ let totalPrice=0;
   onConfirmOrder(){ 
 
     
-  console.log(this.order);
-
+  
+  this.orderService.addOrder(this.order).subscribe(
+    resp=>{
+      console.log(resp);
+      this.basketService.basketProducts=[];
+    }
+  );
 
 
 

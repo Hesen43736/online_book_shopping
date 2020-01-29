@@ -1,13 +1,14 @@
 <h4  style="color: rgb(248, 248, 248);background-color: rgb(41, 94, 194);text-align: center; margin-left: 25px;">Developia Engineering Academy (Full Stack Web Application : Library Management System)</h4>
 <button (click)="onAddProduct()"  class="btn btn-primary" style="margin-left: 25px;">Yeni kitab qeydiyyatı</button>
 
-<div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer" style="margin-left: 25px;">
-    <div class="dataTables_length" id="DataTables_Table_0_length" style="margin-top: 10px;"><label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div>
-    
-    <div class="row"  >
+ 
+   
+    <div class="row" style="margin-left: 10px; margin-top:10px ;"  >
         
         <div class="col-sm-12">
-           <table  class="table table-striped table-bordered table-sm row-border hover dataTable no-footer" datatable="" id="DataTables_Table_4" role="grid" aria-describedby="DataTables_Table_4_info">
+           <table  class="table table-striped table-bordered table-sm row-border hover"
+            datatable [dtOptions]="dtOptions"
+           [dtTrigger]="dtTrigger"   >
                 <thead  >
                     <tr  role="row">
                         <th  class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="ID: activate to sort column descending" style="width: 82.0486px;">ID</th>
@@ -42,16 +43,18 @@
                         <td>{{p.description}}</td>
                         
                             <td style="min-width: 180px;" >{{p.emeliyyatlar}}
-            <button class="btn btn-danger" placement="top">Sil </button>
-            <button style="margin-left: 5px;" class="btn btn-primary">Redaktə</button>
+          
+            <button  (click)="onProductUpdate(counter)" style="margin-left: 5px;" class="btn btn-outline-primary">Redaktə</button>
         </td>
+        
 
                             
                         
-                        
+                         
                     </tr>
                 </tbody>
             </table>
         </div>
-    </div>
+     
 </div>
+

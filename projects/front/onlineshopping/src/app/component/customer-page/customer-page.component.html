@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-12" style="margin: 10px auto 10px auto; text-align: center; z-index: 0; max-height: 300px; overflow: hidden;">
-            <img  src="../../../assets/iki.jpg" style="width: 100%; border-radius: 20px;"/>
+        <div class="col-sm-12" style="margin: 10px auto 10px auto; text-align: center; z-index: 0; max-height: 300px; overflow: hidden; background:url(../../../assets/bg3.png);">
+            <img  src="../../../assets/iki.jpg" style="width: 100%; border-radius: 20px;" />
         </div>
     </div>
 </div>
@@ -39,4 +39,15 @@
     <input class="form-control" type="text" placeholder="Axtarış" />
 
 </div>
- 
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <p style="font-weight: bold;">Developed by Developia engineers</p>
+    
+  </div>
+<hr>
+  <div
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="1000"
+  (scrolled)="onScroll()"
+  >
+  </div>

@@ -22,6 +22,9 @@ import { ProductTemplateComponent } from './component/product-template/product-t
 import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 import { BasketComponent } from './component/basket/basket.component';
 import { OrderConfirmPageComponent } from './component/order-confirm-page/order-confirm-page.component';
+import { DataTablesModule } from 'angular-datatables';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { OrderListComponent } from './component/order-list/order-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +41,8 @@ import { OrderConfirmPageComponent } from './component/order-confirm-page/order-
     ProductTemplateComponent,
     ProductDetailComponent,
     BasketComponent,
-    OrderConfirmPageComponent
+    OrderConfirmPageComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,10 @@ import { OrderConfirmPageComponent } from './component/order-confirm-page/order-
     MatInputModule, 
     MatDialogModule, 
     MatProgressSpinnerModule, 
-    MatButtonModule
+    MatButtonModule,DataTablesModule,
+    InfiniteScrollModule
+    
+
   ],
   providers: [
     {
@@ -61,3 +68,4 @@ import { OrderConfirmPageComponent } from './component/order-confirm-page/order-
   entryComponents:[AddProductComponent,ProductDetailComponent,BasketComponent]
 })
 export class AppModule { }
+
