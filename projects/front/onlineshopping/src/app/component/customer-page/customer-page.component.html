@@ -36,7 +36,7 @@
         <span *ngIf="showBasket">Səbət: {{productCount}}-Məhsul</span>
     </div>
 
-    <input class="form-control" type="text" placeholder="Axtarış" />
+    <input class="form-control" [(ngModel)]="searchText" type="text" placeholder="Axtarış" (input)="onSearch()"/>
 
 </div>
 <div class="jumbotron text-center" style="margin-bottom:0">

@@ -2,6 +2,8 @@ package az.developia.shopping.controller;
 
 import java.util.List;
 
+import javax.persistence.criteria.Order;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import az.developia.shopping.dao.OrderDao;
 import az.developia.shopping.model.OrderModel;
+import az.developia.shopping.model.Product;
 
 @RestController
 @CrossOrigin(origins="*")
@@ -42,7 +45,10 @@ public class OrderController {
 	 }
 	 
 	 
-	 
+	 @GetMapping(path="/user/{userId}")
+	 public List<OrderModel> findAllByUserId(@PathVariable(name="userId") Integer userId ){
+		 return orderDAO.findAllByUserId(userId);
+	 }
 	 
 	 
 	 

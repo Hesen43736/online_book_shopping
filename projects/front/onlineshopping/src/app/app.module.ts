@@ -26,6 +26,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { OrderListComponent } from './component/order-list/order-list.component';
 import { FakeComponent } from './fake/fake.component';
+import { SingupComponent } from './singup/singup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { FakeComponent } from './fake/fake.component';
     BasketComponent,
     OrderConfirmPageComponent,
     OrderListComponent,
-    FakeComponent
+    FakeComponent,
+    SingupComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,7 @@ import { FakeComponent } from './fake/fake.component';
     }
   ],
   bootstrap: [AppComponent],
-  entryComponents:[AddProductComponent,ProductDetailComponent,BasketComponent]
+  entryComponents:[AddProductComponent,ProductDetailComponent,BasketComponent,SingupComponent]
 })
 export class AppModule { }
 

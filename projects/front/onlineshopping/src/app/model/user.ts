@@ -9,12 +9,15 @@ export class UserResponse{
 public id:number;
 public enabled:boolean;
 public validated:boolean;
-public grants:UserGrant[]=[];
+ 
  
 }
 
-export class UserGrant{
+ 
+
+export class User{
     public id:number;
+    public username:string;
+    public password:number;
     public name:string;
-   
 }

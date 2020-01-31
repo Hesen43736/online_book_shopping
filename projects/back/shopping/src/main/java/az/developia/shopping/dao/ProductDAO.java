@@ -15,6 +15,6 @@ public interface ProductDAO extends JpaRepository<Product, Integer> {
 	@Query(value="select * from product limit ?1,?2",nativeQuery=true) 
 	public List<Product> findPartial(Integer begin,Integer length);
 	
-	 
+
 
 }

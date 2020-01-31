@@ -9,7 +9,7 @@ import { Product } from '../model/product';
 export class ProductService {
   products:Product[]=[];
   selectedProductId:number=0;
-
+  selectedP:Product=null;
   deleteById(id: number) {
     return this.http.delete(`${API_URL}/products/${id}`);
   }

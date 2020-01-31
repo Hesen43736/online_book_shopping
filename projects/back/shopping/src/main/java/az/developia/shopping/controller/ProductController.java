@@ -34,6 +34,8 @@ public class ProductController {
 	 @GetMapping
 	 public List<Product> findAll( ){
 		 return productDAO.findAll();
+		 
+		
 	 }
 	
 	 

@@ -53,7 +53,7 @@ products:Product[]=[];
 
   private gridApi;
 
-  onAddProduct(){
+  onAddProduct(){this.productService.selectedP=null;
 let dialog=this.matDialog.open(AddProductComponent);
 dialog.afterClosed().subscribe(
   resp=>{
@@ -72,6 +72,10 @@ this.loadProducts2();
   }
   loadProducts2() {
     this.r.navigate(['fake']);
+  }
+  update(p:Product){
+this.productService.selectedP=p;
+this.matDialog.open(AddProductComponent)
   }
 }
 

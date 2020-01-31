@@ -10,6 +10,7 @@ import { BasketComponent } from '../basket/basket.component';
   styleUrls: ['./customer-page.component.css']
 })
 export class CustomerPageComponent implements OnInit {
+  students:string[]=[];
 productCount:number=0;
   constructor(public productService:ProductService,public basketService:BasketService,private matDialog:MatDialog) { }
 
@@ -55,5 +56,17 @@ length :number=10
         
       }
     );
+  }
+  productsCopy:string[]=[]
+  searchText:string='';
+  onSearch(){
+    this.productsCopy=[];
+
+for (let index = 0; index < this.students.length; index++) {
+  const student = this.students[index];
+  if(student.includes(this.searchText)){
+    this.productsCopy.push(student);
+  }
+}
   }
 }

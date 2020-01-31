@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { UserInfo, UserResponse } from 'src/app/model/user';
 import { UserService } from 'src/app/service/user.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { SingupComponent } from 'src/app/singup/singup.component';
 
 @Component({
   selector: 'app-login',
@@ -11,12 +13,17 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http: HttpClient, private userService: UserService,private router:Router) { }
+  constructor(private http: HttpClient,private matD:MatDialog, private userService: UserService,private router:Router) { }
 
   ngOnInit() {
   }
+openSignupWindow(){
+  this.matD.open(SingupComponent);
+}
+
   username: string = '';
   password: string = '';
+
 
   onLogin() {
 
@@ -30,10 +37,7 @@ export class LoginComponent implements OnInit {
             this.userService.username=userInfo.username;
 this.userService.userId=resp.id;
             console.log(resp);
-            for (let index = 0; index < resp.grants.length; index++) {
-              this.userService.userGrants.push(resp.grants[index].name);
-
-            }
+           
 
             this.router.navigate(['main-page']);
 
@@ -43,7 +47,7 @@ this.userService.userId=resp.id;
             this.message = 'user is deactivated';
           }
         } else {
-          this.message = 'user is not validated';
+          alert("Bu istifadeci qeydiyyat olunmayib");
         }
       }
     );

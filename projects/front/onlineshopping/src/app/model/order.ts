@@ -9,7 +9,7 @@ public basketProducts:BasketProduct[]=[];
 public totalPrice:number;
 public register:Date=new Date();
 
-
+public userId:number;
 
 
 

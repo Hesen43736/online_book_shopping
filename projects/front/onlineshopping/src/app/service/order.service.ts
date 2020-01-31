@@ -20,6 +20,8 @@ addOrder(order:OrderModel) {
 findAll ( ){
   return this.http.get<OrderModel[]>(`${API_URL}/orders`);
 }
-
+findAllByUserId(userId:number){
+  return this.http.get<OrderModel[]>(`${API_URL}/orders/user/${userId}`); 
+}
 
 }

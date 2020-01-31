@@ -31,7 +31,10 @@
                 </div>
 
                 <div class="form-group">
-                  
+                    <input type="text" class="form-control" [(ngModel)]="order.customer.email" 
+                    id="customerEmail"
+                    placeholder="" name="customerEmail" required #customerEmail="ngModel" />
+
 
                     <div *ngIf="customerEmail.invalid" style="color: red;">Email yazın</div>
                 </div>
