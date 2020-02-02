@@ -18,6 +18,12 @@ product:Product=new Product(0);
   constructor(private categoryService:CategoryService,private cityService:CityService,private productService:ProductService,private uploadService:UploadService,private userService:UserService) { }
 
   ngOnInit() {
+    if(this.productService.selectedP==null){
+
+    }else{
+      this.product=this.productService.selectedP;
+    }
+    
 this.categoryService.findAll().subscribe(
   resp=>{
     this.categories=resp;

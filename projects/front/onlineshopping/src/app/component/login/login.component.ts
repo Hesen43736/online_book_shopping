@@ -42,12 +42,10 @@ this.userService.userId=resp.id;
             this.router.navigate(['main-page']);
 
 
-
-          } else {
-            this.message = 'user is deactivated';
           }
+          
         } else {
-          alert("Bu istifadeci qeydiyyat olunmayib");
+          alert(" İstifadəçi adını və ya şifrəni səhv yazmisiniz ");
         }
       }
     );

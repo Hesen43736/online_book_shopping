@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import az.developia.shopping.dao.CustomerDAO;
 import az.developia.shopping.dao.ProductDAO;
+import az.developia.shopping.model.Customer;
 import az.developia.shopping.model.OrderModel;
 import az.developia.shopping.model.Product;
 
@@ -24,7 +26,8 @@ public class ProductController {
 
 	@Autowired
 	private ProductDAO productDAO;
-	
+	 
+
 	 @PostMapping
 	 public Integer add(@RequestBody Product p){
 		 p.setRegister(Date.valueOf(LocalDate.now()));
@@ -56,6 +59,11 @@ public class ProductController {
 	 public List<Product> findPartial(@PathVariable(name="begin") Integer begin,
 			 @PathVariable(name="length") Integer length ){
 		 return productDAO.findPartial(begin,length);
+	 }
+	 @GetMapping(path="/find-partial/{begin}/{length}/{search}")
+	 public List<Product> findPartialSearch(@PathVariable(name="begin") Integer begin,
+			 @PathVariable(name="length") Integer length,	 @PathVariable(name="search") String search ){
+		 return productDAO.findPartialSearch(begin,length,search);
 	 }
 	 
 }

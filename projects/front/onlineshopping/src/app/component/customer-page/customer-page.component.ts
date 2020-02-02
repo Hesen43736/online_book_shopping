@@ -3,6 +3,10 @@ import { ProductService } from 'src/app/service/product.service';
 import { BasketService } from 'src/app/service/basket.service';
 import { MatDialog } from '@angular/material';
 import { BasketComponent } from '../basket/basket.component';
+import { Product } from 'src/app/model/product';
+import { HttpClient } from '@angular/common/http';
+import { Customer } from 'src/app/model/customer';
+
 
 @Component({
   selector: 'app-customer-page',
@@ -12,14 +16,16 @@ import { BasketComponent } from '../basket/basket.component';
 export class CustomerPageComponent implements OnInit {
   students:string[]=[];
 productCount:number=0;
-  constructor(public productService:ProductService,public basketService:BasketService,private matDialog:MatDialog) { }
+productss:Product[]=[];
+customer:Customer[]=[];
+  constructor(public productService:ProductService,private http:HttpClient,public basketService:BasketService,private matDialog:MatDialog) { }
 
   ngOnInit() {
     if(this.productService.productsLoaded===false){
       this.productService.findPartial(this.begin,this.length).subscribe(
         resp=>{
           this.productService.products=resp;
-          this.productService.productsLoaded=true;
+         
         }
       );
 
@@ -50,7 +56,7 @@ begin :number=0;
 length :number=10 
   onScroll(){
     this.begin+=10;
-    this.productService.findPartial(this.begin,this.length).subscribe(
+    this.productService.findPartialSearch(this.begin,this.length,this.searchText).subscribe(
       resp=>{
         this.productService.products.push(...resp);
         
@@ -60,13 +66,15 @@ length :number=10
   productsCopy:string[]=[]
   searchText:string='';
   onSearch(){
-    this.productsCopy=[];
-
-for (let index = 0; index < this.students.length; index++) {
-  const student = this.students[index];
-  if(student.includes(this.searchText)){
-    this.productsCopy.push(student);
-  }
+this.loadProductSearch();
 }
-  }
+loadProductSearch() {
+  this.begin=0;
+  this.productService.findPartialSearch(this.begin,this.length,this.searchText).subscribe(
+    resp=>{
+      this.productService.products=resp;
+     
+    }
+  );
+}
 }

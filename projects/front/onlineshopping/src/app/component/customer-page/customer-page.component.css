@@ -9,3 +9,7 @@
     cursor: pointer;
     box-shadow: 5px 5px 10px coral;
 }
+#myDiv{
+    -webkit-transform: rotateY(130deg); /* Safari prior 9.0 */
+    transform: rotateY(130deg); /* Standard syntax */
+  }

@@ -9,6 +9,8 @@ import { AgGridAngular } from 'ag-grid-angular';
  
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
+import { ProductDetailComponent } from '../product-detail/product-detail.component';
+import { UploadService } from 'src/app/service/upload.service';
 
 @Component({
   selector: 'app-product-list',
@@ -27,8 +29,9 @@ dtOptions: DataTables.Settings = {};
 name:string='';
 saveButtonText:string='Add';
 saveMode:string='add'
+
 products:Product[]=[];
-  constructor(private r:Router,private matDialog:MatDialog,private productService:ProductService,private userService:UserService) { }
+  constructor( private uploadService :UploadService,private r:Router,private matDialog:MatDialog,private productService:ProductService,private userService:UserService) { }
 
   ngOnInit() { this.dtOptions = {
     pagingType: 'full_numbers',
@@ -40,12 +43,10 @@ products:Product[]=[];
     this.products=this.productService.products;
   }
   
-  onProductDelete(counter:number){
-    this.products.splice(counter,1);
-    }
-
-  searchText: string = '';
   
+
+ searchText: string = '';
+
   quickSearch() {
       this.gridApi.setQuickFilter(this.searchText);
   }
@@ -53,7 +54,8 @@ products:Product[]=[];
 
   private gridApi;
 
-  onAddProduct(){this.productService.selectedP=null;
+  onAddProduct(){
+    this.productService.selectedP=null;
 let dialog=this.matDialog.open(AddProductComponent);
 dialog.afterClosed().subscribe(
   resp=>{
@@ -64,6 +66,7 @@ this.loadProducts2();
 );
   }
   loadProducts() {
+
     this.productService.findAllByUserId(this.userService.userId).subscribe(
       resp=>{
         this.products=resp;  this.dtTrigger.next();
@@ -73,9 +76,11 @@ this.loadProducts2();
   loadProducts2() {
     this.r.navigate(['fake']);
   }
-  update(p:Product){
+  update(p:Product ){
+   
+   
 this.productService.selectedP=p;
 this.matDialog.open(AddProductComponent)
-  }
-}
 
+}
+}

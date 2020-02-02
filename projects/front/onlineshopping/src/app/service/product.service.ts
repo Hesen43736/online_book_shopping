@@ -10,6 +10,7 @@ export class ProductService {
   products:Product[]=[];
   selectedProductId:number=0;
   selectedP:Product=null;
+  
   deleteById(id: number) {
     return this.http.delete(`${API_URL}/products/${id}`);
   }
@@ -37,4 +38,11 @@ export class ProductService {
   findPartial(begin:number,length:number){
     return this.http.get<Product[]>(`${API_URL}/products/find-partial/${begin}/${length}`); 
   }
+
+
+  findPartialSearch(begin:number,length:number,search:string){
+    return this.http.get<Product[]>(`${API_URL}/products/find-partial/${begin}/${length}/${search}`); 
+  }
+
+
 }

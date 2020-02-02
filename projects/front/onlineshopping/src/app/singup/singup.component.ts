@@ -32,4 +32,6 @@ alert('Bu istifadəçi artıq mövcuddur');
 }
 );
 }
+
+
 }
