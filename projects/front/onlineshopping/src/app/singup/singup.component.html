@@ -4,12 +4,12 @@
       <h2 class="main-text">Sign up today</h2>
       <!-- Start of form -->
       <form class="register-form" >
-        <input  [(ngModel)]="user.username" name="username"  required   type="first_name" placeholder="first name">
-        <input  [(ngModel)]="user.name" name="name"    required  type="last_name" placeholder="last name">
+        <input  [(ngModel)]="user.username" name="username"  required   type="first_name" placeholder="username">
+        <input  [(ngModel)]="user.name" name="name"    required  type="last_name" placeholder="name">
         <input  [(ngModel)]="user.password" name="password"   required   type="password" placeholder="password">
-        <input type="text" placeholder="email address">
-        <button class="btn">Sign me up!</button>
-        <p class="message">Already registered? <a href="login">Sign In</a></p>
+ 
+        <button (click)="signup()" class="btn">Sign me up!</button>
+        <p mat-dialog-close class="message">Already registered? <a routerLink="/login">Sign In</a></p>
       </form>
       <!-- End of form -->
     </div>
