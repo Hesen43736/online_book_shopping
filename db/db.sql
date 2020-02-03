@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `onlineshoppingdb_sent26` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `onlineshoppingdb_sent26`;
+CREATE DATABASE  IF NOT EXISTS `book_hesen_h` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `book_hesen_h`;
 -- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
 --
 -- Host: 127.0.0.1    Database: onlineshoppingdb_sent26
