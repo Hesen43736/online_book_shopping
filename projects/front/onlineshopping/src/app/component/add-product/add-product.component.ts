@@ -51,6 +51,7 @@ resp=>{
 
     resp=>{
       console.log(resp);
+      alert('success registration');
     }
 
     );
