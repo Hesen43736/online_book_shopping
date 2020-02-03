@@ -14,7 +14,7 @@ public ownerName:string;
 public phone:string;
 public register:Date;
 public userId:number;
-public page:number;
+public pageCount:number;
 
     constructor(public  id:number){
         

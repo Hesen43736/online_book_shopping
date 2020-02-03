@@ -31,6 +31,6 @@ private String ownerName;
 private String phone;
 private Date register;
 private Integer userId;
-private  Integer page;
+private  Integer pageCount;
 
 }
